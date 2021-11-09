@@ -3,10 +3,27 @@
   <div class="row">
 
     <div class="col-md-12 mb1">
-      <input type="text" id="search-bar" placeholder="Search Transactions">
+      <input type="text" id="search-bar" [(ngModel)]="searchTerm" (keyup.enter)="searchTransaction()" placeholder="Search Transactions">
       <a href="#"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
     </div>
 
+
+
+    <div *ngFor="let transaction of transactions">
+      <div class="card d-flex justify-content-lg-around flex-sm-row mb-3">
+        <div class="align-self-lg-start">
+          <img width="40px" height="40px" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png" alt="...">
+        </div>
+        <div class="">
+          <h5>{{transaction.recipient}}</h5>
+          <p>{{transaction.description}}</p>
+        </div>
+        <div class="">
+          <p>{{transaction.date}}</p>
+          <h5>$ {{transaction.amount}}</h5>
+        </div>
+      </div>
+    </div>
 
 
 <!--     <div class="col-md-12">
