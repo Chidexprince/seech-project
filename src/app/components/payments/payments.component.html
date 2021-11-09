@@ -6,22 +6,22 @@
   <hr>
 
   <div class="row">
-    <form>
+    <form #paymentForm="ngForm" (ngSubmit)="makePayment()">
     <div class="col-md-12">
         <div class="input_wrap">
-          <input type="number" required />
+          <input type="number" required name="amount" [(ngModel)]="paymentDetails.amount" />
           <label>Amount</label>
         </div>
       </div>
       <div class="col-md-12">
         <div class="input_wrap">
-          <input type="text" required />
+          <input type="text" required name="recipient" [(ngModel)]="paymentDetails.recipient"/>
           <label>Recipient</label>
         </div>
       </div>
       <div class="col-md-12">
         <div class="input_wrap">
-          <input type="text" required />
+          <input type="text" name="description" [(ngModel)]="paymentDetails.description"/>
           <label>Description <small>(optional)</small></label>
         </div>
       </div>
