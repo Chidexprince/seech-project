@@ -1,5 +1,6 @@
 # seech-project
-A Frontend Assessment for Seech. Recreation of a responsive web for seech bank
+A Frontend Assessment for Seech. Recreation of a responsive web for seech bank.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
 
 ## Development server
