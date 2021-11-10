@@ -8,8 +8,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/css/toastify.css">
 </head>
 <body>
   <app-root></app-root>
+
+  <script src="assets/js/toastify.js"></script>
+  <script>
+    /* Setting up toast notifications */
+    function showToast(msg) {
+      var myToast = Toastify({
+        text: msg,
+        backgroundColor: "green",
+        duration: 5000
+      });
+      myToast.showToast();
+    }
+  </script>
 </body>
 </html>

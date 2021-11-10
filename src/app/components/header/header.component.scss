@@ -1,0 +1,33 @@
+
+
+h4 .logo{
+  font-weight: bolder;
+  color: #b299d7;
+}
+
+.amount{
+  color: #b299d7;
+}
+
+.spacer{
+  border-left: 1px solid #f1f1f1;
+  height: 40px;
+}
+
+.user-profile {
+  border: 1px solid #f1f1f1;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background-color: #41affd;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px){
+  h4{
+    font-size: medium;
+  }
+  h6{
+    font-size: small;
+  }
+}
