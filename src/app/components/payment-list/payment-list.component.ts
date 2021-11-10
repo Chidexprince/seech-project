@@ -16,7 +16,10 @@ export class PaymentListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getTransactionStatus();
-    this.getTransactions();
+
+    setTimeout(() => {
+      this.getTransactions();
+    }, 500);
 
   }
 
@@ -31,7 +34,6 @@ export class PaymentListComponent implements OnInit {
         transaction.date = t.date;
         this.transactions.push(transaction)
       });
-    console.log(this.transactions)
   }
 
   getTransactionStatus() {
@@ -44,12 +46,15 @@ export class PaymentListComponent implements OnInit {
   }
 
   searchTransaction() {
-    this.transactions = this.transactions.filter(t =>
-      this.searchTerm == t.recipient);
-    console.log(this.transactions)
-
+    // on blur, fetch all transactions
+    if (this.searchTerm == '') {
+      this.getTransactions();
+    } else {
+      // search for term
+      this.transactions = this.transactions.filter(t =>
+        this.searchTerm.toLowerCase() == t.recipient.toLowerCase());
+    }
   }
-
 
 
 }

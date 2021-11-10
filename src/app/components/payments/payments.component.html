@@ -1,21 +1,16 @@
-
-  <div class="row">
-
-  </div>
-
-  <hr>
+  <hr class="mb-5">
 
   <div class="row">
     <form #paymentForm="ngForm" (ngSubmit)="makePayment()">
     <div class="col-md-12">
         <div class="input_wrap">
-          <input type="number" required name="amount" [(ngModel)]="paymentDetails.amount" />
+          <input type="number" name="amount" [(ngModel)]="paymentDetails.amount" step=".01" required/>
           <label>Amount</label>
         </div>
       </div>
       <div class="col-md-12">
         <div class="input_wrap">
-          <input type="text" required name="recipient" [(ngModel)]="paymentDetails.recipient"/>
+          <input type="text" name="recipient" [(ngModel)]="paymentDetails.recipient"  required/>
           <label>Recipient</label>
         </div>
       </div>
@@ -25,11 +20,11 @@
           <label>Description <small>(optional)</small></label>
         </div>
       </div>
-      <div class="col-md-12 text-center mb1">
-        <button type="submit" class="btn btn-lg btn-block">Confirm</button>
+      <div class="col-md-12 text-center mt-4">
+        <button type="submit" [disabled]="paymentForm.form.invalid" class="btn btn-lg btn-block">Confirm</button>
       </div>
   </form>
   </div>
 
-  <hr class="mb1">
+  <hr class="my-5">
 
